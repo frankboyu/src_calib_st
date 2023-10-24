@@ -1,0 +1,22 @@
+src_calib_st
+Last updated on 01/30/2023
+
+DESCRIPTION
+Verify the quality of the start counter (ST) calibration for the SRC/CT dataset
+
+USAGE
+-Update the run list of interest in runs.dat
+-Setup the environment: source env.csh
+-Run the script: csh scripts_res.csh
+-Three output files will be available in the results folder
+    1. st_time_plots: includes the timing plots and fit results of each channel of the start counter
+    2. st_time_res: a text file of the offsets and resolutions of each channel. The format is column offset offset_uncertainty resolution resolution_uncertainty
+    3. st_time_summary: a summary plot of the offset and resolution for all the channels. The format is offset against the channel number, with the error bar being resolution   
+-Get a summary of all the runs processed: python summary.py
+-The output files are
+    1. Saved pictures of the offset and the resolution averaged and per channel across the entire run period
+    2. A text file of problematic runs with channel numbers which exceed a specific threshold
+
+ACKNOWLEDGEMENT
+This code is acquired from halld_recon package: https://github.com/JeffersonLab/halld_recon/tree/master/src/plugins/Calibration/ST_Tresolution/macros
+Thanks to Sean Dobbs for taking care of the calibrations and offering help when editing this code
